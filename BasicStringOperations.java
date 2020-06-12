@@ -13,7 +13,8 @@ public class BasicStringOperations {
 		System.out.println("Press 1 for adding string to itself \n"
 				                +"2 for replacing odd positions with # \n"
 				                +"3 for removal of duplicate characters in the String \n"
-				                +"4 for Changing odd characters to upper case ");
+				                +"4 for Changing odd characters to upper case \n "
+				                +"5 to check String is positive or negative");
 		char choice=sc.next().charAt(0);
 		
 		switch(choice)
@@ -29,6 +30,9 @@ public class BasicStringOperations {
 			break;
 		case '4':
 			 System.out.println(oddOccurrencesToUpper(s));
+			break;
+		case '5':
+			System.out.println("The Given String is " + positiveOrNegative(s));
 			break;
 		 default:
 			 System.out.println("Invalid choice");
@@ -97,7 +101,19 @@ public class BasicStringOperations {
 		return str;
 	}
 	
-
+public static String positiveOrNegative(String str)
+{
+	for(int i=0;i<str.length()-1;i++)
+	{
+		int c=(int)str.charAt(i);
+		int c1=(int)str.charAt(i+1);
+		if(c>c1)
+		{
+			return "Negative";
+		}
+	}
+	return "Positive";
+}
 	
 	
 	
